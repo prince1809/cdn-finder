@@ -1,0 +1,53 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.cdn._id ? 'Edit Cdn' : 'New Cdn'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.cdnForm" class="form-horizontal" ng-submit="vm.save(vm.form.cdnForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.cdn.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.cdnForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Cdn name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="url">Url</label>
+          <input name="url" type="text" ng-model="vm.cdn.url" id="url" class="form-control" placeholder="Url" required>
+          <div ng-messages="vm.form.cdnForm.url.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Cdn Url is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="description">Description</label>
+          <textarea name="description" data-ng-model="vm.cdn.description" id="description" class="form-control" cols="30" rows="10" placeholder="Description"></textarea>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="version">Version</label>
+          <input name="version" type="text" ng-model="vm.cdn.version" id="version" class="form-control" placeholder="Verison" required>
+          <div ng-messages="vm.form.cdnForm.version.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Cdn Version is required.</p>
+          </div>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="type">Type</label>
+          <input name="type" type="text" ng-model="vm.cdn.type" id="type" class="form-control" placeholder="Type" required>
+          <div ng-messages="vm.form.cdnForm.type.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Cdn ype is required.</p>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.cdn._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

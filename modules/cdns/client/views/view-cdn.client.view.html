@@ -1,0 +1,19 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.cdn.name"></h1><small>Version: {{vm.cdn.version}}</small>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.cdn.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="cdns.edit({ cdnId: vm.cdn._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <p class="lead" ng-bind="vm.cdn.description"></p>
+  <p>
+    <input class="form-control" value="{{vm.cdn.url}}">
+  </p>
+</section>
